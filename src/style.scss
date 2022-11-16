@@ -113,6 +113,7 @@ nav {
 
 // Testing out the webkit line climp. If it makes sense.
 .card--description {
+    line-height: 150%;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 6;
