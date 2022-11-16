@@ -99,7 +99,7 @@ nav {
 .card--title {
   text-transform: uppercase;
   margin: 7px 0 14px;
-  font-size: 1.5ch;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -120,3 +120,10 @@ nav {
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
 }
+
+@media (max-width: 390px) {
+    .card--description {
+        -webkit-line-clamp: 4;
+    }
+}
+
