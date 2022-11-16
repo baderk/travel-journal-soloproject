@@ -40,6 +40,7 @@ nav {
 }
 
 .posts {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -79,7 +80,7 @@ nav {
   letter-spacing: 0.1rem;
   align-content: center;
   line-height: 10px;
-  font-size: 10px;
+  font-size: 0.65rem;
 
   &:before {
     content: url(./assets/pin.svg);
