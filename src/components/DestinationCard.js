@@ -3,14 +3,15 @@ const DestinationCard = (props) => {
 
   return (
     <div className="card">
-      <img src={props.item.imageUrl} alt="" className="card--image" />
-      <div>
-        <span>{props.item.location}</span>
-        <span>{props.item.googleMapsUrl}</span>
-
-        <h1>{props.item.title}</h1>
-        <p></p>
-        <p></p>
+      <img src={props.item.imageUrl} alt={props.item.title} className="card--image" />
+      <div className="card--info">
+        <section className="card--location">
+          <p className="card--location-name">{props.item.location}</p>
+          <a href={props.item.googleMapsUrl} className="card--location-link">View on Google Maps</a>
+        </section>
+        <h2 className="card--title">{props.item.title}</h2>
+        <p className="card--date">{props.item.startDate} - {props.item.endDate}</p>
+        <p className="card--description">{props.item.description}</p>
       </div>
     </div>
   )

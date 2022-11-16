@@ -14,7 +14,9 @@ function App() {
   return (
     <div className="container">
       <Navbar />
-      {posts}
+      <section className="posts">
+        {posts}
+      </section>
     </div>
   );
 }
