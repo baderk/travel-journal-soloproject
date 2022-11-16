@@ -5,6 +5,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+h2, p {
+  margin: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -38,55 +43,78 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 35px;
+  max-width: 700px;
+  align-self: center;
 }
 
 /*==========Destination card==========*/
 
 .card {
-  padding: 0 40px;
+  padding: 0 25px;
   display: flex;
   flex-direction: row;
-  height: 168px;
-  justify-content: center;
+  height: 170px;
 }
+
 
 .card--image {
   width: 125px;
   object-fit: cover;
   border-radius: 7px;
-  padding-right: 20px;
 }
 
 .card--info {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-}
-
-.card--date, .card--description {
-  font-size: 0.6rem;
-}
-
-.card--date {
-  font-weight: 700;
-}
-
-.card--title {
-  font-size: 25px;
+  padding-left: 20px;
 }
 
 .card--location {
   display: flex;
+  align-items: center;
+}
 
+.card--location-name {
+  display: flex;
+  letter-spacing: 0.1rem;
+  align-content: center;
+  line-height: 10px;
+  font-size: 10px;
+
+  &:before {
+    content: url(./assets/pin.svg);
+    padding-right: 4px;
+  }
+}
+
+.card--location-link {
+  //font-size: xx-small;
+  font-size: 0.6rem;
+  padding-left: 10px;
+  color: #918E9B;
+  white-space: nowrap;
 }
 
 .card--title {
   text-transform: uppercase;
-  margin-right: 10px;
+  margin: 7px 0 14px;
+  font-size: 1.5ch;
+  font-weight: 700;
 }
 
-h2, p {
-  margin: 0;
+.card--date, .card--description {
+  font-size: 10px;
 }
 
+.card--date {
+  font-weight: 700;
+  margin-bottom: 7px;
+}
 
+// Testing out the webkit line climp. If it makes sense.
+.card--description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
