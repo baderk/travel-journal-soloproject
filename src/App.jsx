@@ -3,26 +3,24 @@ import DestinationCard from "./components/DestinationCard";
 import data from "./data";
 import { createContext, useState } from "react";
 
-export const ThemeContext = createContext(null);
+//export const ThemeContext = createContext(null);
 
 function App() {
   const posts = data.map((item) => {
     return <DestinationCard key={item.id} item={item} />;
   });
 
-  const [theme, setTheme] = useState("dark");
-
+  const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    theme === "light" ? setTheme("dark") : setTheme("light");
   };
-
+  //<ThemeContext.Provider value={{ theme, toggleTheme }}>
+  //</ThemeContext.Provider>
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="container" id={theme}>
-        <Navbar />
-        <section className="posts">{posts}</section>
-      </div>
-    </ThemeContext.Provider>
+    <div className="container" id={theme}>
+      <Navbar toggleTheme={toggleTheme} />
+      <section className="posts">{posts}</section>
+    </div>
   );
 }
 
